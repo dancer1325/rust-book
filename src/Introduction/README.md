@@ -1,0 +1,17 @@
+- Possible users of Rust
+    - developers
+        - plenty of Tools  -- Check 'web/tools'
+        - rust compiler’s checks — ensure → stability
+    - students
+        - forces you to learn about OS
+    - companies
+        - using for tasks in
+            - CL tools
+            - web services
+            - DevOps tooling
+            - embedded services
+            - audio & video analysis
+            - cryptocurrencies
+            - bioinformatics
+            - search engines
+            - …
