@@ -2,6 +2,7 @@
 * Learn about
   * `let`
   * `match`
+  * `loop`
   * methods
   * associated functions
   * external crates

@@ -12,6 +12,7 @@ fn main() {
 
     println!("The secret number is: {secret_number}");
 
+    // infinite loop, unless you specify to quit
     loop {
         println!("Please input your guess.");
 

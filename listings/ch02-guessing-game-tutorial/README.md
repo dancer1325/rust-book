@@ -26,6 +26,12 @@
 ## no-listing-03-convert-string-to-number
 * Parsing previously to compare inputNumber vs randomNumber
 * 'Shadowing'
+## no-listing-04-looping
+* `loop`
+  * keyword
+  * infinite loop without breaking
+## listing-02-05
+* `loop` + specifying to quit (`break`)
 
 
 # Notes
