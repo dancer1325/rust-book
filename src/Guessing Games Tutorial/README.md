@@ -8,6 +8,7 @@
   * variables
   * reference
   * placeholder
+  * Cargo.lock
 
 ## Variables
 * `let variableName`
@@ -23,3 +24,8 @@
 
 ## Placeholder
 * `{VariableToEvaluate}` OR `{}, expression`
+
+## Cargo.lock
+* := mechanism which
+  * if anyone builds the project → rebuild the same artifact
+  * is used rather than specified in Cargo.toml

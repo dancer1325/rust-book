@@ -8,6 +8,15 @@
 # How have the subdirectories been created?
 * `cargo new project_name`
 
+# How to run locally?
+* `cargo run`
+
+# Projects
+## listing-02-01
+* Read an input line
+## listing-02-02
+* Add 'rand' crate dependency
+
 # Notes
 * `std::io`
   * standard library
@@ -20,3 +29,6 @@
   * create variables
 * `io::stdin().read_line()`
   * if you do NOT append with `.expect()` & run `cargo build` -> you get a warning
+* `cargo update`
+  * update a crate
+    * ignoring Cargo.lock
