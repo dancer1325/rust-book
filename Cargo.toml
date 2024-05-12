@@ -1,5 +1,5 @@
 [workspace]
-members = [ "listings/ch01-GettingStarted/created_with_cargo","packages/*"]
+members = [ "listings/ch01-GettingStarted/created_with_cargo", "listings/ch02-guessing-game-tutorial/listing-02-01-noexpect", "listings/ch02-guessing-game-tutorial/listing-02-01-nouse","packages/*"]
 default-members = ["packages/*"]
 resolver = "2"
 exclude = [

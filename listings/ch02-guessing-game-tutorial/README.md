@@ -7,3 +7,16 @@
 
 # How have the subdirectories been created?
 * `cargo new project_name`
+
+# Notes
+* `std::io`
+  * standard library
+  * input and output
+  * `use ...`
+    * if the type is NOT in the prelude -> `use` is necessary -- NOT in this case --
+    * 'listing-02-01' -- importing by default --
+    * 'listing-02-01-nouse' -- WITHOUT importing --
+* `let variableName`
+  * create variables
+* `io::stdin().read_line()`
+  * if you do NOT append with `.expect()` & run `cargo build` -> you get a warning
