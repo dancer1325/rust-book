@@ -23,6 +23,10 @@
 ## listing-02-04
 * Try to compare unsuccessfully the inputNumber vs randomNumber
   * == `cargo build` does NOT compile
+## no-listing-03-convert-string-to-number
+* Parsing previously to compare inputNumber vs randomNumber
+* 'Shadowing'
+
 
 # Notes
 * `std::io`

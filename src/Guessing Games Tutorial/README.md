@@ -32,6 +32,10 @@
 
 ## Rust
 * Strong & Static Type system + Type inference
+* shadowing
+  * == variable — can be — reused
+    * Note: 👁️even change the type👁️
 
 ## Numbers
 * `i32` is by default
+* `u32`

@@ -20,7 +20,9 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+    // Shadowing
+    // string variable -- is parsed to -> u32 variable
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");  // 'parse' returns a Result -> error handling with expect
 
     println!("You guessed: {guess}");
 
