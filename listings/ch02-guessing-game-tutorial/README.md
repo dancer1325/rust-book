@@ -32,6 +32,9 @@
   * infinite loop without breaking
 ## listing-02-05
 * `loop` + specifying to quit (`break`)
+* `expect` -> `match` to handle the error and let continue without skipping
+## listing-02-06
+* Remove logging line
 
 
 # Notes

@@ -24,7 +24,7 @@ fn main() {
         // ANCHOR: ch19
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => continue,     // _        == any value
         };
         // ANCHOR_END: ch19
 
