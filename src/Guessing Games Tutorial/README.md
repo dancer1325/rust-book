@@ -29,3 +29,9 @@
 * := mechanism which
   * if anyone builds the project → rebuild the same artifact
   * is used rather than specified in Cargo.toml
+
+## Rust
+* Strong & Static Type system + Type inference
+
+## Numbers
+* `i32` is by default

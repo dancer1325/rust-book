@@ -16,6 +16,13 @@
 * Read an input line
 ## listing-02-02
 * Add 'rand' crate dependency
+## listing-02-03
+* Add 
+  * 'rand' crate dependency &
+  * use it create a random number
+## listing-02-04
+* Try to compare unsuccessfully the inputNumber vs randomNumber
+  * == `cargo build` does NOT compile
 
 # Notes
 * `std::io`
