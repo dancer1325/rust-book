@@ -18,3 +18,5 @@
 * 'no-listing-02-adding-mut'
   * make a variable, mutable
   * `cargo run`, checking that it compiles now
+## Constant
+* 'no-listing-02-adding-mut'
