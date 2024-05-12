@@ -40,3 +40,6 @@
 ## Numbers
 * `i32` is by default
 * `u32`
+
+# Notes
+* All samples code are '/listings'
