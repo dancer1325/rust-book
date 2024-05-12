@@ -7,6 +7,7 @@
   * external crates
   * variables
   * reference
+  * placeholder
 
 ## Variables
 * `let variableName`
@@ -19,3 +20,6 @@
 ## Reference / Pointer
 * `& variableName`
 * By default, they are immutable
+
+## Placeholder
+* `{VariableToEvaluate}` OR `{}, expression`
