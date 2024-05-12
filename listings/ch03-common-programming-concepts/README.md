@@ -18,5 +18,12 @@
 * 'no-listing-02-adding-mut'
   * make a variable, mutable
   * `cargo run`, checking that it compiles now
+* 'no-listing-03-shadowing'
+  * shadowing a variable
+* 'no-listing-04-shadowing-can-change-types'
+  * shadowing can change the type
+* 'no-listing-05-mut-cant-change-types'
+  * mutable variables can NOT change the type
+  * `cargo run` does NOT compile
 ## Constant
 * 'no-listing-02-adding-mut'
