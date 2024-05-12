@@ -1,5 +1,5 @@
 [workspace]
-members = ["packages/*"]
+members = [ "listings/ch01-GettingStarted/created_with_cargo","packages/*"]
 default-members = ["packages/*"]
 resolver = "2"
 exclude = [
