@@ -1,45 +1,51 @@
 ## Data Types
 
-Every value in Rust is of a certain *data type*, which tells Rust what kind of
-data is being specified so it knows how to work with that data. We’ll look at
-two data type subsets: scalar and compound.
+* 👁️ALL value | Rust -- is of a -- certain *data type* 👁️
+* data type subsets
+  * scalar
+  * compound
 
-Keep in mind that Rust is a *statically typed* language, which means that it
-must know the types of all variables at compile time. The compiler can usually
-infer what type we want to use based on the value and how we use it. In cases
-when many types are possible, such as when we converted a `String` to a numeric
-type using `parse` in the [“Comparing the Guess to the Secret
-Number”][comparing-the-guess-to-the-secret-number]<!-- ignore --> section in
-Chapter 2, we must add a type annotation, like this:
+* ⭐Rust is a *statically typed* language ⭐
+  * == MUST know ALL variables' types | compile time
+* Rust compiler -- can usually infer -- type / want to use
+  * -- based on the --
+    * value
+    * how we use it
+  * 👁️ if many types are possible -> we must add a type annotation 👁️
+    * _Example:_ if we convert, via `parse`, a `String` -- to a -- numeric type
+      * -> type annotation recommended
 
-```rust
-let guess: u32 = "42".parse().expect("Not a number!");
-```
+      ```rust
+      let guess: u32 = "42".parse().expect("Not a number!");
+      ```
 
-If we don’t add the `: u32` type annotation shown in the preceding code, Rust
-will display the following error, which means the compiler needs more
-information from us to know which type we want to use:
+      * Check [“Comparing the Guess to the Secret
+        Number”][comparing-the-guess-to-the-secret-number]
 
-```console
-{{#include ../listings/ch03-common-programming-concepts/output-only-01-no-type-annotations/output.txt}}
-```
+      * else, following error displayed -- Check 'no_type_annotations' --
 
-You’ll see different type annotations for other data types.
+      ```console
+      {{#include ../listings/ch03-common-programming-concepts/output-only-01-no-type-annotations/output.txt}}
+      ```
 
 ### Scalar Types
 
-A *scalar* type represents a single value. Rust has four primary scalar types:
-integers, floating-point numbers, Booleans, and characters. You may recognize
-these from other programming languages. Let’s jump into how they work in Rust.
+* = 1! value
+* 4 primary scalar types
+  * integers,
+  * floating-point numbers,
+  * Booleans,
+  * characters
 
 #### Integer Types
 
-An *integer* is a number without a fractional component. We used one integer
-type in Chapter 2, the `u32` type. This type declaration indicates that the
-value it’s associated with should be an unsigned integer (signed integer types
-start with `i` instead of `u`) that takes up 32 bits of space. Table 3-1 shows
-the built-in integer types in Rust. We can use any of these variants to declare
-the type of an integer value.
+* = number / WITHOUT a fractional component
+* variants
+  * unsigned -- `u` --
+    * == negative or positive
+  * signed -- `i` -- 
+    * == ONLY positive
+    * is stored -- via -- [two’s complement][twos-complement] representation
 
 <span class="caption">Table 3-1: Integer Types in Rust</span>
 
@@ -52,16 +58,7 @@ the type of an integer value.
 | 128-bit | `i128`  | `u128`   |
 | arch    | `isize` | `usize`  |
 
-Each variant can be either signed or unsigned and has an explicit size.
-*Signed* and *unsigned* refer to whether it’s possible for the number to be
-negative—in other words, whether the number needs to have a sign with it
-(signed) or whether it will only ever be positive and can therefore be
-represented without a sign (unsigned). It’s like writing numbers on paper: when
-the sign matters, a number is shown with a plus sign or a minus sign; however,
-when it’s safe to assume the number is positive, it’s shown with no sign.
-Signed numbers are stored using [two’s complement][twos-complement]<!-- ignore
---> representation.
-
+TODO:
 Each signed variant can store numbers from -(2<sup>n - 1</sup>) to 2<sup>n -
 1</sup> - 1 inclusive, where *n* is the number of bits that variant uses. So an
 `i8` can store numbers from -(2<sup>7</sup>) to 2<sup>7</sup> - 1, which equals
