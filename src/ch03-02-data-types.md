@@ -114,13 +114,21 @@ some sort of collection.
 
 #### Floating-Point Types
 
-Rust also has two primitive types for *floating-point numbers*, which are
-numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
-which are 32 bits and 64 bits in size, respectively. The default type is `f64`
-because on modern CPUs, it’s roughly the same speed as `f32` but is capable of
-more precision. All floating-point types are signed.
-
-Here’s an example that shows floating-point numbers in action:
+* == numbers / decimal points
+  * ONLY signed
+  * -- represented according to the -- IEEE-754 standard
+* primitive types for *floating-point numbers*
+  * `f32`
+    * 32 bits size
+    * single-precision
+  * `f64`
+    * 64 bits size
+    * default one
+    * double precision
+    * vs `f32`
+      * == speed | modern CPUs
+      * more precision
+* _Example:_
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -128,26 +136,23 @@ Here’s an example that shows floating-point numbers in action:
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-06-floating-point/src/main.rs}}
 ```
 
-Floating-point numbers are represented according to the IEEE-754 standard. The
-`f32` type is a single-precision float, and `f64` has double precision.
-
 #### Numeric Operations
 
-Rust supports the basic mathematical operations you’d expect for all the number
-types: addition, subtraction, multiplication, division, and remainder. Integer
-division truncates toward zero to the nearest integer. The following code shows
-how you’d use each numeric operation in a `let` statement:
+* basic mathematical operations
+  * addition,
+  * subtraction,
+  * multiplication,
+  * division
+    * Integer division -- truncates toward -- zero to the nearest integer
+  * remainder
+* [Appendix B - list of ALL operators][appendix_b]
+* _Example:_ 
 
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-07-numeric-operations/src/main.rs}}
 ```
-
-Each expression in these statements uses a mathematical operator and evaluates
-to a single value, which is then bound to a variable. [Appendix
-B][appendix_b]<!-- ignore --> contains a list of all operators that Rust
-provides.
 
 #### The Boolean Type -- `bool` --
 
