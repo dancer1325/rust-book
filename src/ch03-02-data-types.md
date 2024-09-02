@@ -172,30 +172,29 @@ some sort of collection.
   * | conditionals
     * _Example:_ `if` expression  [“Control Flow”][control-flow]<!-- ignore --> section.
 
-#### The Character Type
-*TODO: 
-Rust’s `char` type is the language’s most primitive alphabetic type. Here are
-some examples of declaring `char` values:
+#### The Character Type -- `char` -- 
+
+* MOST primitive alphabetic type
+* 👁️ single quotes - `''` 👁️
+  * vs `String`, with -- `""` --
+* _Example:_ 
 
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-09-char/src/main.rs}}
 ```
-
-Note that we specify `char` literals with single quotes, as opposed to string
-literals, which use double quotes. Rust’s `char` type is four bytes in size and
-represents a Unicode Scalar Value, which means it can represent a lot more than
-just ASCII. Accented letters; Chinese, Japanese, and Korean characters; emoji;
-and zero-width spaces are all valid `char` values in Rust. Unicode Scalar
-Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF` inclusive.
-However, a “character” isn’t really a concept in Unicode, so your human
-intuition for what a “character” is may not match up with what a `char` is in
-Rust. We’ll discuss this topic in detail in [“Storing UTF-8 Encoded Text with
-Strings”][strings]<!-- ignore --> in Chapter 8.
+* 4 bytes in size
+* -- represents a -- Unicode Scalar Value
+  * == -- can represent -- a lot more than just ASCII
+  * _Example:_ Accented letters; Chinese, Japanese, and Korean characters; emoji; and zero-width spaces
+  * range [`U+0000`, `U+D7FF`] & [`U+E000`, `U+10FFFF`]
+  * “character” | Unicode != concept
+    * check [“Storing UTF-8 Encoded Text with Strings”][strings]
 
 ### Compound Types
 
+* TODO:
 *Compound types* can group multiple values into one type. Rust has two
 primitive compound types: tuples and arrays.
 
