@@ -43,8 +43,12 @@
 * variants
   * unsigned -- `u` --
     * == negative or positive
+    * range of numbers [0, 2<sup>n</sup> - 1]
+      * _Example:_ `u8` has a range of [0, 2<sup>8</sup> - 1] = [0, 255]
   * signed -- `i` -- 
     * == ONLY positive
+    * range of numbers [-(2<sup>n - 1</sup>), 2(<sup>n - 1</sup>) - 1], being n, the # of bits
+      * _Example:_ `i8` has a range of [-(2<sup>7</sup>), 2<sup>7</sup> - 1] =[-128, 127]
     * is stored -- via -- [two’s complement][twos-complement] representation
 
 <span class="caption">Table 3-1: Integer Types in Rust</span>
@@ -58,18 +62,11 @@
 | 128-bit | `i128`  | `u128`   |
 | arch    | `isize` | `usize`  |
 
-TODO:
-Each signed variant can store numbers from -(2<sup>n - 1</sup>) to 2<sup>n -
-1</sup> - 1 inclusive, where *n* is the number of bits that variant uses. So an
-`i8` can store numbers from -(2<sup>7</sup>) to 2<sup>7</sup> - 1, which equals
--128 to 127. Unsigned variants can store numbers from 0 to 2<sup>n</sup> - 1,
-so a `u8` can store numbers from 0 to 2<sup>8</sup> - 1, which equals 0 to 255.
+* "arch" 
+  * `isize` & `usize` types -- depend on the -- architecture of the computer | your program is running on
+  * _Example:_ 64 bits == 64-bit architecture, 32 bits == 32-bit architecture
 
-Additionally, the `isize` and `usize` types depend on the architecture of the
-computer your program is running on, which is denoted in the table as “arch”:
-64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit
-architecture.
-
+* TODO:
 You can write integer literals in any of the forms shown in Table 3-2. Note
 that number literals that can be multiple numeric types allow a type suffix,
 such as `57u8`, to designate the type. Number literals can also use `_` as a
@@ -93,34 +90,27 @@ some sort of collection.
 
 > ##### Integer Overflow
 >
-> Let’s say you have a variable of type `u8` that can hold values between 0 and
-> 255. If you try to change the variable to a value outside that range, such as
-> 256, *integer overflow* will occur, which can result in one of two behaviors.
-> When you’re compiling in debug mode, Rust includes checks for integer overflow
-> that cause your program to *panic* at runtime if this behavior occurs. Rust
-> uses the term *panicking* when a program exits with an error; we’ll discuss
-> panics in more depth in the [“Unrecoverable Errors with
-> `panic!`”][unrecoverable-errors-with-panic]<!-- ignore --> section in Chapter
-> 9.
->
-> When you’re compiling in release mode with the `--release` flag, Rust does
-> *not* include checks for integer overflow that cause panics. Instead, if
-> overflow occurs, Rust performs *two’s complement wrapping*. In short, values
-> greater than the maximum value the type can hold “wrap around” to the minimum
-> of the values the type can hold. In the case of a `u8`, the value 256 becomes
-> 0, the value 257 becomes 1, and so on. The program won’t panic, but the
-> variable will have a value that probably isn’t what you were expecting it to
-> have. Relying on integer overflow’s wrapping behavior is considered an error.
->
-> To explicitly handle the possibility of overflow, you can use these families
-> of methods provided by the standard library for primitive numeric types:
->
-> * Wrap in all modes with the `wrapping_*` methods, such as `wrapping_add`.
-> * Return the `None` value if there is overflow with the `checked_*` methods.
-> * Return the value and a boolean indicating whether there was overflow with
->   the `overflowing_*` methods.
-> * Saturate at the value’s minimum or maximum values with the `saturating_*`
->   methods.
+> * If you try to change the variable -- to a -- value outside it's range -> happen *integer overflow* / possible behaviors 
+>   * _Example: `u8` variable / try to assign 256 
+>   * if you’re compiling in debug mode -> Rust includes checks for integer overflow
+>     * == if it happens | runtime -> *panic* -- [“Unrecoverable Errors with `panic!`”][unrecoverable-errors-with-panic]
+>   * if you’re compiling in release mode -- via -- `--release` -> Rust performs *two’s complement wrapping*
+>     * == values / > maximum value -> the type can hold “wrap around” to the minimum 
+>       * _Example:_ let's `u8` -> 256 becomes 0, the value 257 becomes 1, ...
+>     * != panic 
+>     * recommendations
+>       * 👁️NOT rely on integer overflow’s wrapping 👁️
+>     * ways to explicitly handle
+>       * wrap in all modes
+>         * `wrapping_*` methods -- _Example:_ `wrapping_add` -- 
+>       * return the `None` value 
+>         * `checked_*` methods 
+>       * return the value + boolean / indicate whether there was overflow
+>         * `overflowing_*` methods
+>       * saturate | value’s minimum or maximum values
+>         * `saturating_*`
+
+* _Example:_ TODO:
 
 #### Floating-Point Types
 
@@ -159,11 +149,13 @@ to a single value, which is then bound to a variable. [Appendix
 B][appendix_b]<!-- ignore --> contains a list of all operators that Rust
 provides.
 
-#### The Boolean Type
+#### The Boolean Type -- `bool` --
 
-As in most other programming languages, a Boolean type in Rust has two possible
-values: `true` and `false`. Booleans are one byte in size. The Boolean type in
-Rust is specified using `bool`. For example:
+* allowed values
+  * `true`
+  * `false`
+* 1 byte size The Boolean type in
+* _Example:_ 
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -171,12 +163,12 @@ Rust is specified using `bool`. For example:
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-08-boolean/src/main.rs}}
 ```
 
-The main way to use Boolean values is through conditionals, such as an `if`
-expression. We’ll cover how `if` expressions work in Rust in the [“Control
-Flow”][control-flow]<!-- ignore --> section.
+* uses
+  * | conditionals
+    * _Example:_ `if` expression  [“Control Flow”][control-flow]<!-- ignore --> section.
 
 #### The Character Type
-
+*TODO: 
 Rust’s `char` type is the language’s most primitive alphabetic type. Here are
 some examples of declaring `char` values:
 
