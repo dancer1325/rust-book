@@ -194,20 +194,26 @@ some sort of collection.
 
 ### Compound Types
 
-* TODO:
-*Compound types* can group multiple values into one type. Rust has two
-primitive compound types: tuples and arrays.
+* allows
+  * multiple values -- can be grouped into -- 1 type
+* primitive built-in compound types
+  * tuples
+  * arrays
 
 #### The Tuple Type
 
-A *tuple* is a general way of grouping together a number of values with a
-variety of types into one compound type. Tuples have a fixed length: once
-declared, they cannot grow or shrink in size.
-
-We create a tuple by writing a comma-separated list of values inside
-parentheses. Each position in the tuple has a type, and the types of the
-different values in the tuple don’t have to be the same. We’ve added optional
-type annotations in this example:
+* allows
+  * grouping together values / variety of types
+* fixed length
+  * == once declared -> they can NOT grow or shrink size
+* `(value1, value2, ...)`
+  * `value1`'s type can be != `value2`'s type
+  * `()`
+    * named *unit*
+    * == tuple / NO values
+    * uses
+      * expressions / do NOT return ANY value
+* _Example:_
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -215,42 +221,26 @@ type annotations in this example:
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-10-tuples/src/main.rs}}
 ```
 
-The variable `tup` binds to the entire tuple because a tuple is considered a
-single compound element. To get the individual values out of a tuple, we can
-use pattern matching to destructure a tuple value, like this:
+* ways to access individual tuple's values
+  * destructuring it
 
-<span class="filename">Filename: src/main.rs</span>
+  <span class="filename">Filename: src/main.rs</span>
+  
+  ```rust
+  {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-11-destructuring-tuples/src/main.rs}}
+  ```
 
-```rust
-{{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-11-destructuring-tuples/src/main.rs}}
-```
+  * `tupleVariable.index` / index starts by 0 
 
-This program first creates a tuple and binds it to the variable `tup`. It then
-uses a pattern with `let` to take `tup` and turn it into three separate
-variables, `x`, `y`, and `z`. This is called *destructuring* because it breaks
-the single tuple into three parts. Finally, the program prints the value of
-`y`, which is `6.4`.
-
-We can also access a tuple element directly by using a period (`.`) followed by
-the index of the value we want to access. For example:
-
-<span class="filename">Filename: src/main.rs</span>
-
-```rust
-{{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-12-tuple-indexing/src/main.rs}}
-```
-
-This program creates the tuple `x` and then accesses each element of the tuple
-using their respective indices. As with most programming languages, the first
-index in a tuple is 0.
-
-The tuple without any values has a special name, *unit*. This value and its
-corresponding type are both written `()` and represent an empty value or an
-empty return type. Expressions implicitly return the unit value if they don’t
-return any other value.
+  <span class="filename">Filename: src/main.rs</span>
+  
+  ```rust
+  {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-12-tuple-indexing/src/main.rs}}
+  ```
 
 #### The Array Type
 
+* TODO:
 Another way to have a collection of multiple values is with an *array*. Unlike
 a tuple, every element of an array must have the same type. Unlike arrays in
 some other languages, arrays in Rust have a fixed length.
