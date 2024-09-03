@@ -196,7 +196,7 @@ some sort of collection.
 
 * allows
   * multiple values -- can be grouped into -- 1 type
-* primitive built-in compound types
+* 👁️primitive built-in compound types 👁️
   * tuples
   * arrays
 
@@ -240,82 +240,75 @@ some sort of collection.
 
 #### The Array Type
 
-* TODO:
-Another way to have a collection of multiple values is with an *array*. Unlike
-a tuple, every element of an array must have the same type. Unlike arrays in
-some other languages, arrays in Rust have a fixed length.
+* ⚠️ALL array's elements MUST have the SAME type ⚠️
+  * != tuple
+* ⚠️fixed length ⚠️
+  * != other languages
+* `[element1, element2, ...]`
 
-We write the values in an array as a comma-separated list inside square
-brackets:
+  <span class="filename">Filename: src/main.rs</span>
+  
+  ```rust
+  {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-13-arrays/src/main.rs}}
+  ```
 
-<span class="filename">Filename: src/main.rs</span>
+* uses
+  * data allocated | stack
+    * != heap -- [Chapter 4][stack-and-heap]
+  * ensure fixed number of elements
+    * vs vector type
+      * [Chapter 8][vectors]
+      * NOT so flexible
+        * Reason: 🧠 vector can grow or shrink in size 🧠 
+      * recommendations
+        * 👁️if you are unsure which one to use -> use a vector 👁️
+    * == you know the number of elements
+      * _Example:_ 
 
-```rust
-{{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-13-arrays/src/main.rs}}
-```
+  ```rust
+  let months = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"];
+  ```
 
-Arrays are useful when you want your data allocated on the stack rather than
-the heap (we will discuss the stack and the heap more in [Chapter
-4][stack-and-heap]<!-- ignore -->) or when you want to ensure you always have a
-fixed number of elements. An array isn’t as flexible as the vector type,
-though. A *vector* is a similar collection type provided by the standard
-library that *is* allowed to grow or shrink in size. If you’re unsure whether
-to use an array or a vector, chances are you should use a vector. [Chapter
-8][vectors]<!-- ignore --> discusses vectors in more detail.
+* `let variableName: [arrayType; numberOfArrayElements]`
+  * declare an array variable 
+  * _Example:_ 
 
-However, arrays are more useful when you know the number of elements will not
-need to change. For example, if you were using the names of the month in a
-program, you would probably use an array rather than a vector because you know
-it will always contain 12 elements:
+  ```rust
+  let a: [i32; 5] = [1, 2, 3, 4, 5];
+  ```
 
-```rust
-let months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
-```
+* `let variableName = [initialValue; length]`
+  * initialize an array / 
+    * SAME value / element
+  * _Example:_ 
 
-You write an array’s type using square brackets with the type of each element,
-a semicolon, and then the number of elements in the array, like so:
-
-```rust
-let a: [i32; 5] = [1, 2, 3, 4, 5];
-```
-
-Here, `i32` is the type of each element. After the semicolon, the number `5`
-indicates the array contains five elements.
-
-You can also initialize an array to contain the same value for each element by
-specifying the initial value, followed by a semicolon, and then the length of
-the array in square brackets, as shown here:
-
-```rust
-let a = [3; 5];
-```
-
-The array named `a` will contain `5` elements that will all be set to the value
-`3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
-more concise way.
+  ```rust
+  let a = [3; 5];
+  ```
 
 ##### Accessing Array Elements
 
-An array is a single chunk of memory of a known, fixed size that can be
-allocated on the stack. You can access elements of an array using indexing,
-like this:
+* array == 1! chunk of memory / 
+  * fixed size
+  * can be allocated | stack
+* `arrayVariable[index]`
+  * -- access to -- array's items
+  * `index` starts by 0
 
-<span class="filename">Filename: src/main.rs</span>
-
-```rust
-{{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-14-array-indexing/src/main.rs}}
-```
-
-In this example, the variable named `first` will get the value `1` because that
-is the value at index `[0]` in the array. The variable named `second` will get
-the value `2` from index `[1]` in the array.
+  <span class="filename">Filename: src/main.rs</span>
+  
+  ```rust
+  {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-14-array-indexing/src/main.rs}}
+  ```
 
 ##### Invalid Array Element Access
 
-Let’s see what happens if you try to access an element of an array that is past
-the end of the array. Say you run this code, similar to the guessing game in
-Chapter 2, to get an array index from the user:
+* if you try to access an array's element 
+  * 👁Rust checks previously to access | runtime, index < array size 👁️
+    * ⭐Rust’s memory safety principles ⭐
+  * / out of the array -> Rust in panic -> runtime error / break IMMEDIATELY the execution of the program
+    * ⭐== NO attempt to memory access ⭐
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -323,38 +316,7 @@ Chapter 2, to get an array index from the user:
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-15-invalid-array-access/src/main.rs}}
 ```
 
-This code compiles successfully. If you run this code using `cargo run` and
-enter `0`, `1`, `2`, `3`, or `4`, the program will print out the corresponding
-value at that index in the array. If you instead enter a number past the end of
-the array, such as `10`, you’ll see output like this:
-
-<!-- manual-regeneration
-cd listings/ch03-common-programming-concepts/no-listing-15-invalid-array-access
-cargo run
-10
--->
-
-```console
-thread 'main' panicked at src/main.rs:19:19:
-index out of bounds: the len is 5 but the index is 10
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
-
-The program resulted in a *runtime* error at the point of using an invalid
-value in the indexing operation. The program exited with an error message and
-didn’t execute the final `println!` statement. When you attempt to access an
-element using indexing, Rust will check that the index you’ve specified is less
-than the array length. If the index is greater than or equal to the length,
-Rust will panic. This check has to happen at runtime, especially in this case,
-because the compiler can’t possibly know what value a user will enter when they
-run the code later.
-
-This is an example of Rust’s memory safety principles in action. In many
-low-level languages, this kind of check is not done, and when you provide an
-incorrect index, invalid memory can be accessed. Rust protects you against this
-kind of error by immediately exiting instead of allowing the memory access and
-continuing. Chapter 9 discusses more of Rust’s error handling and how you can
-write readable, safe code that neither panics nor allows invalid memory access.
+* Chapter 9
 
 [comparing-the-guess-to-the-secret-number]:
 ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number

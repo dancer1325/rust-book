@@ -1,5 +1,6 @@
 use std::io;
 
+// Guessing game
 fn main() {
     let a = [1, 2, 3, 4, 5];
 
@@ -16,6 +17,7 @@ fn main() {
         .parse()
         .expect("Index entered was not a number");
 
+    // if you introduced a number >=5 -> here it's the point / runtime error got
     let element = a[index];
 
     println!("The value of the element at index {index} is: {element}");
