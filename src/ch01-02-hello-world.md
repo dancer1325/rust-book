@@ -12,6 +12,27 @@ prints the text `Hello, world!` to the screen, so we’ll do the same here!
 > team has been focusing on enabling great IDE support via `rust-analyzer`. See
 > [Appendix D][devtools]<!-- ignore --> for more details.
 
+TODO: 
+- Rust files
+    - `*.rs`
+        - extension
+    - `word_underscore_separated.rs`
+        - naming with several words
+
+- `fn main { … }`
+    - special function /
+        - 👁️first function run in any executable Rust program 👁️
+    - `{}`
+        - 👁️ALWAYS required 👁️
+
+- AOT compiled language
+    - AOT == Ahead Of Time
+    - == compile + execute
+        - executable does NOT require to have installed Rust
+
+# Notes
+* All the examples are placed under '/listings'
+
 ### Creating a Project Directory
 
 You’ll start by making a directory to store your Rust code. It doesn’t matter

@@ -1,17 +1,36 @@
 # Programming a Guessing Game
 
-Let’s jump into Rust by working through a hands-on project together! This
-chapter introduces you to a few common Rust concepts by showing you how to use
-them in a real program. You’ll learn about `let`, `match`, methods, associated
-functions, external crates, and more! In the following chapters, we’ll explore
-these ideas in more detail. In this chapter, you’ll just practice the
-fundamentals.
+* goal
+  * hands-on project
+  * how to use
+    * `let`
+    * `match`
+    * methods
+    * associated functions
+    * external crates
 
+TODO: 
 We’ll implement a classic beginner programming problem: a guessing game. Here’s
 how it works: the program will generate a random integer between 1 and 100. It
 will then prompt the player to enter a guess. After a guess is entered, the
 program will indicate whether the guess is too low or too high. If the guess is
 correct, the game will print a congratulatory message and exit.
+
+* Learn about
+  * `let`
+  * `match`
+  * `loop`
+  * methods
+  * associated functions
+  * external crates
+  * variables
+  * reference
+  * placeholder
+  * Cargo.lock
+
+TODO: 
+* `& variableName`
+* By default, they are immutable
 
 ## Setting Up a New Project
 
@@ -122,6 +141,8 @@ from the user.
 
 ### Storing Values with Variables
 
+* `let variableName`
+* By default, they are immutable
 Next, we’ll create a *variable* to store the user input, like this:
 
 ```rust,ignore
@@ -268,6 +289,8 @@ can use `expect`. You’ll learn about recovering from errors in [Chapter
 
 ### Printing Values with `println!` Placeholders
 
+* `{VariableToEvaluate}` OR `{}, expression`
+
 Aside from the closing curly bracket, there’s only one more line to discuss in
 the code so far:
 
@@ -327,6 +350,9 @@ library. However, the Rust team does provide a [`rand` crate][randcrate] with
 said functionality.
 
 ### Using a Crate to Get More Functionality
+
+* := function / implemented on a type
+* `type::functionName`
 
 Remember that a crate is a collection of Rust source code files. The project
 we’ve been building is a *binary crate*, which is an executable. The `rand`
@@ -442,6 +468,11 @@ reuse what it has already downloaded and compiled for those.
 
 #### Ensuring Reproducible Builds with the *Cargo.lock* File
 
+* Cargo.lock
+  * := mechanism which
+    * if anyone builds the project → rebuild the same artifact
+    * is used rather than specified in Cargo.toml
+
 Cargo has a mechanism that ensures you can rebuild the same artifact every time
 you or anyone else builds your code: Cargo will use only the versions of the
 dependencies you specified until you indicate otherwise. For example, say that
@@ -504,7 +535,7 @@ libraries, so Rustaceans are able to write smaller projects that are assembled
 from a number of packages.
 
 ### Generating a Random Number
-
+* `i32` is by default
 Let’s start using `rand` to generate a number to guess. The next step is to
 update *src/main.rs*, as shown in Listing 2-3.
 
@@ -642,6 +673,10 @@ anchor or snip comments
 {{#include ../listings/ch02-guessing-game-tutorial/listing-02-04/output.txt}}
 ```
 
+* Strong & Static Type system + Type inference
+* shadowing
+    * == variable — can be — reused
+        * Note: 👁️even change the type👁️
 The core of the error states that there are *mismatched types*. Rust has a
 strong, static type system. However, it also has type inference. When we wrote
 `let mut guess = String::new()`, Rust was able to infer that `guess` should be

@@ -72,7 +72,28 @@ We’re allowed to change the value bound to `x` from `5` to `6` when `mut` is
 used. Ultimately, deciding whether to use mutability or not is up to you and
 depends on what you think is clearest in that particular situation.
 
+* By default, immutable
+* `mut variableName`
+    * make a variable mutable in the value
+        * Note: ⚠️type can NOT be changed⚠️
+* shadowing
+    * depends on the scope
+    * ≠ `mut`
+        * shadow variable — can be still — immutable
+
+
 ### Constants
+
+* := values / immutable ALWAYS
+* ≠ immutable variables
+    * 👁️NOT allowed `mut constantName` 👁️
+    * can be declared in any scope
+    * type must be declared ALWAYS == can NOT be inferred
+    * = constant expression
+        * == NOT possible to be computed at runtime
+* `const constantName: Type`
+* CAPITAL_SEPARATED_WITH_UNDERSCORE
+    * convention to declare a constant
 
 Like immutable variables, *constants* are values that are bound to a name and
 are not allowed to change, but there are a few differences between constants
