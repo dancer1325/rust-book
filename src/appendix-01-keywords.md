@@ -1,13 +1,25 @@
 ## Appendix A: Keywords
 
-The following list contains keywords that are reserved for current or future
-use by the Rust language. As such, they cannot be used as identifiers (except
-as raw identifiers as we’ll discuss in the “[Raw
-Identifiers][raw-identifiers]<!-- ignore -->” section). Identifiers are names
-of functions, variables, parameters, struct fields, modules, crates, constants,
-macros, static values, attributes, types, traits, or lifetimes.
-
-[raw-identifiers]: #raw-identifiers
+* goal
+  * Rust reserved keywords
+    * if you want to use -> ONLY as [Raw Identifiers](#raw-identifiers)
+  
+* Identifiers
+  * == names of 
+    * functions, OR 
+    * variables, OR
+    * parameters, OR
+    * struct, OR
+    * fields, OR
+    * modules, OR
+    * crates, OR
+    * constants, OR
+    * macros, OR
+    * static values, OR
+    * attributes, OR
+    * types, OR
+    * traits, OR
+    * lifetimes
 
 ### Keywords Currently in Use
 

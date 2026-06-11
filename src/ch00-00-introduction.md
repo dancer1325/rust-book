@@ -19,13 +19,8 @@
 
 TODO:
 
-* Chapter 19 contains a
 
-more about lifetimes,
-
-Finally, some appendices contain useful information about the language in a
-more reference-like format
-* Appendix A covers Rust’s keywords, Appendix B
+Appendix B
 covers Rust’s operators and symbols, Appendix C covers derivable traits
 provided by the standard library, Appendix D covers some useful development
 tools, and Appendix E explains Rust editions
