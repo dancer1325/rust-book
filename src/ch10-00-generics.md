@@ -1,5 +1,9 @@
 # Generic Types, Traits, and Lifetimes
 
+* enable you to
+  * define code / applies | >1 types
+
+TODO: 
 Every programming language has tools for effectively handling the duplication
 of concepts. In Rust, one such tool is *generics*: abstract stand-ins for
 concrete types or other properties. We can express the behavior of generics or

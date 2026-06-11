@@ -1,10 +1,13 @@
 # Advanced Features
 
-By now, you’ve learned the most commonly used parts of the Rust programming
-language. Before we do one more project in Chapter 20, we’ll look at a few
-aspects of the language you might run into every once in a while, but may not
-use every day. You can use this chapter as a reference for when you encounter
-any unknowns. The features covered here are useful in very specific situations.
+* goal
+  * Rust's ADVANCED features / 
+    * uses
+      * OCCASIONALLY
+      * ❌NOT ALWAYS❌
+
+
+
 Although you might not reach for them often, we want to make sure you have a
 grasp of all the features Rust has to offer.
 

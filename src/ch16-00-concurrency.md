@@ -1,5 +1,10 @@
 # Fearless Concurrency
 
+* goal
+  * concurrent programming models
+  * how to program | MULTIPLE threads
+
+TODO: 
 Handling concurrent programming safely and efficiently is another of Rust’s
 major goals. *Concurrent programming*, where different parts of a program
 execute independently, and *parallel programming*, where different parts of a

@@ -16,9 +16,12 @@
           * set of tools /
             * friendly
             * polished
-    * HIGH efficient |
-      * speed
-      * memory usage
+    * HIGH efficient 
+      * |
+        * speed
+        * memory usage
+      * -- via -- zero-cost abstractions
+        * Reason:🧠 HIGHER-level features are compiled -- to -- lower-level code🧠
   * use case
     * low-level code 
       * _Example:_ control memory usage
@@ -37,12 +40,13 @@
         * ergonomic 🧠
   * audience
     * developers
-      * plenty of Tools  -- Check 'web/tools'
-      * rust compiler’s checks — ensure → stability
+      * Reason:🧠Rust
+        * provides: [plenty of Tools](https://github.com/rust-lang/rust/tree/master/src/tools)
+        * ['s stability](https://github.com/dancer1325/rust/blob/main/src/doc/rustc-dev-guide/src/overview.md)🧠
     * students
-      * forces you to learn about OS
+      * enable you to learn about OS
     * companies
-      * using for tasks in
+      * use cases
         * CL tools
         * web services
         * DevOps tooling

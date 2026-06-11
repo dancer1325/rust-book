@@ -1,12 +1,9 @@
 # Final Project: Building a Multithreaded Web Server
 
-It’s been a long journey, but we’ve reached the end of the book. In this
-chapter, we’ll build one more project together to demonstrate some of the
-concepts we covered in the final chapters, as well as recap some earlier
-lessons.
-
-For our final project, we’ll make a web server that says “hello” and looks like
-Figure 20-1 in a web browser.
+* goal
+  * project / 
+    * implement a low-level multithreaded web server
+    * says “hello”
 
 ![hello from rust](img/trpl20-01.png)
 
