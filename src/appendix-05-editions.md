@@ -1,4 +1,4 @@
-## Appendix E - Editions
+## Appendix E - Rust Editions
 
 * `cargo new`
   * adds a bit of metadata | your "Cargo.toml"

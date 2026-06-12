@@ -1,8 +1,4 @@
-## Appendix D - Useful Development Tools
-
-In this appendix, we talk about some useful development tools that the Rust
-project provides. We’ll look at automatic formatting, quick ways to apply
-warning fixes, a linter, and integrating with IDEs.
+## Appendix D - Useful Development Tools / provided -- by -- Rust project
 
 ### Automatic Formatting with `rustfmt`
 

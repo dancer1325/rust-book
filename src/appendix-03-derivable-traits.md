@@ -1,9 +1,12 @@
-## Appendix C: Derivable Traits
+## Appendix C: Derivable Traits / provided -- by the -- standard library
 
-In various places in the book, we’ve discussed the `derive` attribute, which
+* `derive` attribute
+  * TODO: 
 you can apply to a struct or enum definition. The `derive` attribute generates
 code that will implement a trait with its own default implementation on the
 type you’ve annotated with the `derive` syntax.
+
+
 
 In this appendix, we provide a reference of all the traits in the standard
 library that you can use with `derive`. Each section covers:
