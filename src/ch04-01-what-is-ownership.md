@@ -15,31 +15,48 @@
         * ❌if ANY of the rules are violated -> the program will NOT compile❌
         * ❌NO slow down your program❌
 
+### The Stack and the Heap
 
-> ### The Stack and the Heap
->
-> Many programming languages don’t require you to think about the stack and the
-> heap very often. But in a systems programming language like Rust, whether a
-> value is on the stack or the heap affects how the language behaves and why
-> you have to make certain decisions. Parts of ownership will be described in
-> relation to the stack and the heap later in this chapter, so here is a brief
-> explanation in preparation.
->
-> Both the stack and the heap are parts of memory available to your code to use
-> at runtime, but they are structured in different ways. The stack stores
-> values in the order it gets them and removes the values in the opposite
-> order. This is referred to as *last in, first out*. Think of a stack of
-> plates: when you add more plates, you put them on top of the pile, and when
-> you need a plate, you take one off the top. Adding or removing plates from
-> the middle or bottom wouldn’t work as well! Adding data is called *pushing
-> onto the stack*, and removing data is called *popping off the stack*. All
-> data stored on the stack must have a known, fixed size. Data with an unknown
-> size at compile time or a size that might change must be stored on the heap
-> instead.
->
-> The heap is less organized: when you put data on the heap, you request a
-> certain amount of space. The memory allocator finds an empty spot in the heap
-> that is big enough, marks it as being in use, and returns a *pointer*, which
+* | MANY programming languages,
+  * ❌NOT require you to think about the stack & heap❌ 
+
+* | systems programming language
+  * _Example:_ Rust
+  * whether a value is | stack OR heap -> impacts
+    * how the language behaves
+    * why you have to make certain decisions
+
+* ownership's parts
+  * are described -- related to the -- stack & heap
+
+* stack & heap
+  * == parts of memory / 
+    * DIFFERENT structure
+      * stack
+        * follow "Last in, First out"
+          * stores values / order it gets them
+          * removes values / OPPOSITE order it gets them
+        * ⚠️requirements / data stored | stack⚠️
+          * fixed size
+            * if size is unknown | compile time OR might change -> use heap
+      * heap
+        * less organized
+          * put data | heap -> you request certain amount of space
+            * steps | request this amount of space
+              * memory allocator 
+                * finds an empty spot | heap / big enough
+                * marks it -- as -- being in use
+                * returns a *pointer* / == that location's address
+  * uses
+    * your code use | runtime
+
+* *pushing | stack*
+  * == add data
+* *popping off the stack*
+  * == remove data
+
+  
+, which
 > is the address of that location. This process is called *allocating on the
 > heap* and is sometimes abbreviated as just *allocating* (pushing values onto
 > the stack is not considered allocating). Because the pointer to the heap is a
