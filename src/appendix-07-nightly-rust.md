@@ -125,12 +125,11 @@ next stable release happens! Breakage in a beta release is relatively rare, but
 
 ### Maintenance time
 
-The Rust project supports the most recent stable version
-* When a new stable
-version is released, the old version reaches its end of life (EOL)
-* This means
-each version is supported for six weeks.
-
+* 6 weeks / EACH version
+  * | release a NEW stable version,
+    * the OLD version reaches its EOL (== End Of Life)
+* ONLY support the MOST recent stable version
+  
 ### Unstable Features
 
 There’s one more catch with this release model: unstable features
@@ -202,34 +201,6 @@ Rust, rather than your default of stable Rust
 * This comes in handy when you
 have a lot of Rust projects!
 
-### The RFC Process and Teams
+### RFC Process & Teams
 
-So how do you learn about these new features? Rust’s development model follows
-a *Request For Comments (RFC) process*
-* If you’d like an improvement in Rust,
-you can write up a proposal, called an RFC.
-
-Anyone can write RFCs to improve Rust, and the proposals are reviewed and
-discussed by the Rust team, which is comprised of many topic subteams
-* There’s
-a full list of the teams [on Rust’s
-website](https://www.rust-lang.org/governance), which includes teams for
-each area of the project: language design, compiler implementation,
-infrastructure, documentation, and more
-* The appropriate team reads the
-proposal and the comments, writes some comments of their own, and eventually,
-there’s consensus to accept or reject the feature.
-
-If the feature is accepted, an issue is opened on the Rust repository, and
-someone can implement it
-* The person who implements it very well may not be the
-person who proposed the feature in the first place! When the implementation is
-ready, it lands on the `master` branch behind a feature gate, as we discussed
-in the [“Unstable Features”](#unstable-features)<!-- ignore --> section.
-
-After some time, once Rust developers who use nightly releases have been able
-to try out the new feature, team members will discuss the feature, how it’s
-worked out on nightly, and decide if it should make it into stable Rust or not.
-If the decision is to move forward, the feature gate is removed, and the
-feature is now considered stable! It rides the trains into a new stable release
-of Rust.
+* [here](https://github.com/dancer1325/rust-rfcs)
